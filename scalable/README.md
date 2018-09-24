@@ -3,7 +3,7 @@ Anything that might help with assignments/practical work for scalable computing.
 Any details for the files in here can be found below.  
   
 ### setup.sh  
-Install dependencies and compile JohnTheRipper on a fresh ubuntu instance in case saved images go missing.  
+Installs dependencies and compiles JohnTheRipper on a fresh ubuntu instance in case any saved images go missing.  
 Run this first:  
 ```
 curl https://raw.githubusercontent.com/guineec/college-tools/master/scalable/setup.sh > setup.sh && chmod +x setup.sh
