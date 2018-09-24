@@ -48,8 +48,8 @@ then
   exit $CODE
 fi
 cd
-printf "\nJohnTheRipper compiled."
+printf "\nJohnTheRipper compiled.\n"
 printf "Read https://github.com/magnumripper/JohnTheRipper/blob/bleeding-jumbo/doc/INSTALL for details and instructions for running JtR.\n"
 
 # That's it
-printf "\nSetup complete!"
+printf "\nSetup complete!\n"
