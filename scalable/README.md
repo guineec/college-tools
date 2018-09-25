@@ -13,3 +13,8 @@ Then run:
 ./setup.sh
 ```  
 ... and JtR should be cloned into home and compiled, ready to go.
+    
+### jtr-cheat-sheet.pdf
+A reference for JohnTheRipper common commands. From [this website](https://countuponsecurity.files.wordpress.com/2016/09/jtr-cheat-sheet.pdf).  
+
+    
