@@ -4,7 +4,7 @@ Details for files in this directory can be found below.
   
 ## lucene-setup.sh  
 #### Sets up Apache Lucene in the directory from which it is run.  
-Currently, this script supports either #### bash or zsh ONLY.  
+Currently, this script supports either **bash or zsh ONLY.**  
   
 To get the script run:  
 ```
