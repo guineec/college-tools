@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+get_deps=1
+
+if [ "$1" = "no-deps" ]; then
+  printf " --> no-deps: script will skip dependency installation.\n"
+  get_deps=0
+fi
+
 # Get the JtR jumbo version repo
 printf "Cloning JohnTheRipper... "
 mkdir ~/code/
@@ -17,23 +24,25 @@ fi
 cd ../
 printf "done.\n"
 
-# Install the dependencies for JtR compilation
+# Install the dependencies for JtR compilation unless no-deps argument passed
 # (or at least the ones I had to install the first time)
-printf "\nInstalling dependencies...\n"
-deps=(gcc libssl-dev make)
-for dep in ${deps[@]}
-do
-  printf " - Attempting to install dependency $dep.\n"
-  sudo apt-get install $dep
-  CODE=$?
-  if (test $CODE -ne 0)
-  then
-    printf "\n - Error installing dependency $dep.\n"
-    printf " - apt-get install failed.\n"
-    printf "Exiting.\n"
-    exit $CODE
-  fi
-done
+if [ $get_deps -eq 1 ]; then
+  printf "\nInstalling dependencies...\n"
+  deps=(gcc libssl-dev make)
+  for dep in ${deps[@]}
+  do
+    printf " - Attempting to install dependency $dep.\n"
+    sudo apt-get install $dep
+    CODE=$?
+    if (test $CODE -ne 0)
+    then
+      printf "\n - Error installing dependency $dep.\n"
+      printf " - apt-get install failed.\n"
+      printf "Exiting.\n"
+      exit $CODE
+    fi
+  done
+fi
 
 # Run JtR compile stuff
 printf "\n\nCompiling JohnTheRipper... (showing output)\n"
