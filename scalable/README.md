@@ -12,7 +12,13 @@ Then run:
 ```
 ./setup.sh
 ```  
-... and JtR should be cloned into home and compiled, ready to go.
+... and JtR should be cloned into home and compiled, ready to go.  
+  
+Optionally, the dependency installations can be skipped (this is useful if running on a local machine that has all dependencies satisfied).  
+To do this just pass the no-deps argument:  
+```
+./setup.sh no-deps
+```
     
 ## jtr-cheat-sheet.pdf
 A reference for JohnTheRipper common commands. From [this website](https://countuponsecurity.files.wordpress.com/2016/09/jtr-cheat-sheet.pdf).  
