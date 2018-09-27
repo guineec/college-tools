@@ -8,13 +8,21 @@ if len(sys.argv) != 3:
 pname, fp, limit = sys.argv
 outfile = fp.replace(".txt", "") + "_limit_" + limit + ".txt"
 
-with open(fp, "r") as f, open(outfile, "w+") as of:
+with open(fp, "r", encoding="ISO-8859-1") as f, open(outfile, "w+") as of:
   lines = 0
   occurences = 0
   for line in f:
     if len(line.rstrip()) == 8:
       of.write(line)
-      print("Lines processed: " + str(lines))
-      print(str(limit) + " character lines: " + str(occurences))
+      occurences += 1
+      print("Lines processed: " + str(lines), end="     \r")
     
     lines += 1
+
+print("\n\nFinished.")
+print("Lines read: " + lines)
+print("Lines of exactly " + str(limit) + " characters: ", occurences)
+percent = float(occurences) / float(lines)
+percent = round(percent, 2)
+print("New file size is " + str(percent) + "% of source file size.")
+
