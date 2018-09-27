@@ -31,4 +31,13 @@ USAGE:
 ```
 python3 results-formatter.py <path-to-.hashes-file>
 ```  
-Outputs a .broken file with the same name as the passed .hashes file, containing properly formatted results.        
+Outputs a .broken file with the same name as the passed .hashes file, containing properly formatted results.    
+
+## charlimit.py  
+**Requires python 3**  
+Search a file line by line and copy all lines whose length in characters matches a given limit into a new file. Can be handy to trim the size of wordlists for use in JtR.    
+USAGE:  
+```
+python3 charlimit.py <path-to-wordlist.txt> <limit>
+```    
+**NOTE:** This will take some time to run on large files, but a lot of the time it will significantly decrease the wordlist.    
