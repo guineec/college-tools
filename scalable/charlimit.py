@@ -20,8 +20,8 @@ with open(fp, "r", encoding="ISO-8859-1") as f, open(outfile, "w+") as of:
     lines += 1
 
 print("\n\nFinished.")
-print("Lines read: " + lines)
-print("Lines of exactly " + str(limit) + " characters: ", occurences)
+print("Lines read: " + str(lines))
+print("Lines of exactly " + str(limit) + " characters: " + str(occurences))
 percent = float(occurences) / float(lines)
 percent = round(percent, 2)
 print("New file size is " + str(percent) + "% of source file size.")
