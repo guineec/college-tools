@@ -22,5 +22,13 @@ To do this just pass the no-deps argument:
     
 ## jtr-cheat-sheet.pdf
 A reference for JohnTheRipper common commands. From [this website](https://countuponsecurity.files.wordpress.com/2016/09/jtr-cheat-sheet.pdf).  
-
-    
+  
+  
+## results-formatter.py  
+**Requires python 3**  
+Format results of a hash-cracking exercise to upload to submitty  
+USAGE:  
+```
+python3 results-formatter.py <path-to-.hashes-file>
+```  
+Outputs a .broken file with the same name as the passed .hashes file, containing properly formatted results.        
