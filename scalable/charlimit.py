@@ -23,6 +23,7 @@ print("\n\nFinished.")
 print("Lines read: " + str(lines))
 print("Lines of exactly " + str(limit) + " characters: " + str(occurences))
 percent = float(occurences) / float(lines)
+percent = percent * 100
 percent = round(percent, 2)
 print("New file size is " + str(percent) + "% of source file size.")
 
