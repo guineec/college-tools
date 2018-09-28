@@ -8,7 +8,7 @@ Currently, this script supports either **bash or zsh ONLY.**
   
 To get the script run:  
 ```
-curl https://raw.githubusercontent.com/guineec/college-tools/master/information-retrieval/lucene-setup.sh > lucene-setup.sh && chmod +x lucene-setup.sh
+wget https://raw.githubusercontent.com/guineec/college-tools/master/information-retrieval/lucene-setup.sh && chmod +x lucene-setup.sh
 ```  
 Then run it with:  
 ```
