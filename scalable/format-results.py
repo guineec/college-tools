@@ -15,23 +15,15 @@ print("done.")
 
 # Begin formatting
 print("Generating output...", end=" ")
-with open(output_path, "r+") as outf, open(hash_path, "r") as hashf:
-    formatted_output = ""
-    hashes = hashf.readlines()
-    outlines = outf.readlines()
-    index = 0
-    for line in outlines:
-        curr_hash = hashes[index].rstrip()
-        line = line.replace("?:", "")
-        if index != len(outlines) - 1 and index != len(outlines) - 2:
-            formatted_output = formatted_output + curr_hash + " " + line
-        index += 1
-    
-    outf.seek(0)
-    outf.write(formatted_output)
-    outf.close()
-    hashf.close()
+
 
 print("done.")
 print("Output file " + hash_path.replace(".hashes", ".broken") + " generated.")
 
+with open(output_path, "w+") as of, open("~/code/JohnTheRipper/run/john.pot", "r") as potf:
+    for line in potf:
+        formatted_line = line.replace(":", " ")
+        of.write(formatted_line)
+
+print("Formatted output written.")
+print("File" + hash_path.replace(".hashes", ".broken") + " ready for submission.")
