@@ -29,7 +29,7 @@ A reference for JohnTheRipper common commands. From [this website](https://count
 Format results of a hash-cracking exercise to upload to submitty  
 USAGE:  
 ```
-python3 results-formatter.py <path-to-.hashes-file>
+python3 results-formatter.py <path-to-.hashes-file> <path-to-potfile>
 ```  
 Outputs a .broken file with the same name as the passed .hashes file, containing properly formatted results.    
 
