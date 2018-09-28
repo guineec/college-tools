@@ -6,7 +6,7 @@ Any details for the files in here can be found below.
 Installs dependencies and compiles JohnTheRipper on a fresh ubuntu instance in case any saved images go missing.  
 Run this first:  
 ```
-curl https://raw.githubusercontent.com/guineec/college-tools/master/scalable/setup.sh > setup.sh && chmod +x setup.sh
+wget https://raw.githubusercontent.com/guineec/college-tools/master/scalable/setup.sh && chmod +x setup.sh
 ```   
 Then run:
 ```
