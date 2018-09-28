@@ -31,7 +31,7 @@ USAGE:
 ```
 python3 results-formatter.py <path-to-.hashes-file> <path-to-potfile>
 ```  
-If you haven't modified anything, your potfile is probably in your JohnTheRipper/run/ folder, and is named john.pot    
+If you haven't modified anything, your potfile is probably in your `JohnTheRipper/run/` directory, and is named `john.pot`      
 Outputs a .broken file with the same name as the passed .hashes file, containing properly formatted results.    
 
 ## charlimit.py  
