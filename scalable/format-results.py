@@ -11,7 +11,6 @@ hash_path = sys.argv[1]
 pot_path = sys.argv[2]
 wd = os.getcwd()
 output_path = wd + "/" + hash_path.replace(".hashes", ".broken")
-os.system("~/code/JohnTheRipper/run/john --show " + hash_path + "> " + output_path)
 print("done.")
 
 # Begin formatting
