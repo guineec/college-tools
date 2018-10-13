@@ -6,13 +6,14 @@ if len(sys.argv) != 3:
   sys.exit(11)
 
 pname, fp, limit = sys.argv
-outfile = fp.replace(".txt", "") + "_limit_" + limit + ".txt"
+limit = int(limit)
+outfile = fp.replace(".txt", "") + "_limit_" + str(limit) + ".txt"
 
 with open(fp, "r", encoding="ISO-8859-1") as f, open(outfile, "w+") as of:
   lines = 0
   occurences = 0
   for line in f:
-    if len(line.rstrip()) == 8:
+    if len(line.rstrip()) == limit:
       of.write(line)
       occurences += 1
       print("Lines processed: " + str(lines), end="     \r")

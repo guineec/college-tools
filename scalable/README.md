@@ -42,3 +42,13 @@ USAGE:
 python3 charlimit.py <path-to-wordlist.txt> <limit>
 ```    
 **NOTE:** This will take some time to run on large files, but a lot of the time it will significantly decrease the wordlist.    
+  
+    
+## compound_words.py  
+**Requires python 3**  
+Take a list of words and output all possible permutations of that list.  
+USAGE:  
+```  
+python3 compound_words.py [options] <path-to-wordlist.txt>  
+```  
+***NOTE:*** Again, this will take some time to run on larger lists.  
