@@ -1,5 +1,4 @@
 import argparse
-import itertools
 
 ap = argparse.ArgumentParser()
 ap.add_argument("wordsfile", type=str, help="File containing words to compound")
