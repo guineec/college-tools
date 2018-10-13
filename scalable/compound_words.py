@@ -24,5 +24,8 @@ with open(wordf, "r") as f:
     words[i] = words[i].strip()
 
 with open(outfile, "w") as f:
-  compounds = list(itertools.permutations(words))
-  print(compounds)
+  for wordi in words:
+    for wordj in words:
+      comp_wrd = wordi + wordj
+      if len(comp_wrd) > len(words[0]):
+        f.write(comp_wrd + "\n")
