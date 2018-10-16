@@ -90,13 +90,6 @@ printf "\nReboot required for install to complete.\n"
 printf "\nReboot now? [y]es/[n]o\n"
 read -s -n 1 reboot_opt
 
-if [ "$reboot_opt" = "y" ] | [ "$reboot_opt" = "Y" ]; then
-	printf "Install complete.\n"
-	printf "Rebooting...\n"
-	sudo reboot
-else
-	printf "No reboot option selected.\n"
-	printf "Install complete. A reboot is required to finish setup.\n"
-	printf "Reboot with sudo reboot to finish setup.\n"
-fi
+printf "Install complete. A reboot is required to finish setup.\n"
+printf "Reboot with sudo reboot to finish setup.\n"
 
