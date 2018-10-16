@@ -19,7 +19,18 @@ To do this just pass the no-deps argument:
 ```
 ./setup.sh no-deps
 ```
-    
+
+## hashcat-setup.sh  
+Configures GPU environment for use with hashcat, and attempts to install hashcat on the instance.  Currently only supports Tesla P100 and V100 GPUs. Tested only on ubuntu 16.04, so it may not work with other versions.  
+  
+To use, just use `wget` the script like this (and make it executable):  
+```  
+wget https://raw.githubusercontent.com/guineec/college-tools/hashcat-setup/scalable/hashcat-setup.sh
+chmod +x hashcat-setup.sh
+```  
+Then run with `./hashcat-setup.sh`  
+
+      
 ## jtr-cheat-sheet.pdf
 A reference for JohnTheRipper common commands. From [this website](https://countuponsecurity.files.wordpress.com/2016/09/jtr-cheat-sheet.pdf).  
   
