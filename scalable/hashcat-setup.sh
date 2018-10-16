@@ -4,11 +4,11 @@ printf "GPU Type: [1]:Tesla P100 [2]:Tesla V100\n"
 read -s -n 1 GPU
 
 if [ $GPU = 1  ]; then
-	printf "Getting driver... "
+		printf "Getting Tesla P100 driver... "
 	driver_loc="http://us.download.nvidia.com/tesla/396.44/nvidia-diag-driver-local-repo-ubuntu1604-396.44_1.0-1_amd64.deb"
 	driver_name="nvidia-diag-driver-local-repo-ubuntu1604-396.44_1.0-1_amd64.deb"
 elif [ $GPU = 2  ]; then
-	printf "Getting driver... "
+	printf "Getting driver Tesla V100 Driver... "
 	driver_loc="http://us.download.nvidia.com/tesla/396.44/nvidia-diag-driver-local-repo-ubuntu1604-396.44_1.0-1_amd64.deb"
 	driver_name="nvidia-diag-driver-local-repo-ubuntu1604-396.44_1.0-1_amd64.deb"
 fi
@@ -48,6 +48,17 @@ if [ $code -ne 0 ]; then
 	printf "FAILURE.\n"
 	exit $code
 fi
+
+printf "Adding key... "
+key=$("ls /var/nvidia-diag-driver-local-repo-396.44/ | grep pub")
+sudo apt-key add "/var/nvidia-diag-driver-local-repo-396.44/$key"
+code=$?
+if [ $code -ne 0 ]; then
+	printf "FAILED.\nKey couldn't be added.\n"
+	printf "Try running `sudo apt-key add /var/nvidia-diag-driver-local-repo-396.44/$key`\n"
+	exit $code
+fi
+
 printf "Unpack complete.\n"
 sudo apt-get update
 code=$?
