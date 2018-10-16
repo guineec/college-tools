@@ -86,10 +86,6 @@ cd
 rm $driver_name
 printf "DONE.\n"
 
-printf "\nReboot required for install to complete.\n"
-printf "\nReboot now? [y]es/[n]o\n"
-read -s -n 1 reboot_opt
-
 printf "Install complete. A reboot is required to finish setup.\n"
 printf "Reboot with sudo reboot to finish setup.\n"
 
