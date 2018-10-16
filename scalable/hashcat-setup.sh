@@ -56,7 +56,7 @@ sudo apt-key add $key
 code=$?
 if [ $code -ne 0 ]; then
 	printf "FAILED.\nKey couldn't be added.\n"
-	printf "Try running `sudo apt-key add /var/nvidia-diag-driver-local-repo-396.44/$key`\n"
+	printf "Try running sudo apt-key add /var/nvidia-diag-driver-local-repo-396.44/$key\n"
 	exit $code
 fi
 
