@@ -50,7 +50,7 @@ if [ $code -ne 0 ]; then
 fi
 
 printf "Adding key... "
-key=$("ls /var/nvidia-diag-driver-local-repo-396.44/ | grep pub")
+key=$(ls /var/nvidia-diag-driver-local-repo-396.44/ | grep pub)
 sudo apt-key add "/var/nvidia-diag-driver-local-repo-396.44/$key"
 code=$?
 if [ $code -ne 0 ]; then
