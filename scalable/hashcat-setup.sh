@@ -56,10 +56,17 @@ if [ $code -ne 0 ]; then
 	exit $code
 fi
 sudo apt-get install cuda-drivers
-code="$?"
-if [ $code -ne 0 ]; tjem
+code=$?
+if [ $code -ne 0 ]; then
 	printf "apt-get install failed, exiting\n"
 	exit $code
+fi
+
+sudo apt-get install hashcat
+code=$?
+if [ $code -ne 0 ]; then
+	printf "couldn't install hashcat from apt. Try installing manually.\n"
+	printf "CONTINUING WITHOUT HASHCAT INSTALL, DRIVERS SHOULD STILL BE INSTALLED.\n"
 fi
 
 printf "\nReboot required for install to complete.\n"
