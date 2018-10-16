@@ -4,7 +4,7 @@ printf "GPU Type: [1]:Tesla P100 [2]:Tesla V100\n"
 read -s -n 1 GPU
 
 if [ $GPU = 1  ]; then
-		printf "Getting Tesla P100 driver... "
+	printf "Getting Tesla P100 driver... "
 	driver_loc="http://us.download.nvidia.com/tesla/396.44/nvidia-diag-driver-local-repo-ubuntu1604-396.44_1.0-1_amd64.deb"
 	driver_name="nvidia-diag-driver-local-repo-ubuntu1604-396.44_1.0-1_amd64.deb"
 elif [ $GPU = 2  ]; then
