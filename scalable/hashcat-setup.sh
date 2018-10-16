@@ -50,8 +50,9 @@ if [ $code -ne 0 ]; then
 fi
 
 printf "Adding key... "
-key=$(ls /var/nvidia-diag-driver-local-repo-396.44/ | grep pub)
-sudo apt-key add "/var/nvidia-diag-driver-local-repo-396.44/$key"
+cd /var/nvidia-diag-driver-local-repo-396.44/
+key=`ls | grep pub`
+sudo apt-key add $key
 code=$?
 if [ $code -ne 0 ]; then
 	printf "FAILED.\nKey couldn't be added.\n"
@@ -80,6 +81,11 @@ if [ $code -ne 0 ]; then
 	printf "CONTINUING WITHOUT HASHCAT INSTALL, DRIVERS SHOULD STILL BE INSTALLED.\n"
 fi
 
+printf "\nCleaning up... "
+cd
+rm $driver_name
+printf "DONE.\n"
+
 printf "\nReboot required for install to complete.\n"
 printf "\nReboot now? [y]es/[n]o\n"
 read -s -n 1 reboot_opt
@@ -91,6 +97,6 @@ if [ "$reboot_opt" = "y" ] | [ "$reboot_opt" = "Y" ]; then
 else
 	printf "No reboot option selected.\n"
 	printf "Install complete. A reboot is required to finish setup.\n"
-	printf "Run `sudo reboot` to finish setup.\n"
+	printf "Reboot with sudo reboot to finish setup.\n"
 fi
 
