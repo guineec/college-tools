@@ -12,7 +12,7 @@ if args.output:
 else:
   outfile = args.wordsfile + ".compounded"
 
-delim = args.delim if args.delim else " "
+delim = args.delim if args.delim else "\n"
 wordf = args.wordsfile
 words = []
 
