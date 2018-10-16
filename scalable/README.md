@@ -6,11 +6,11 @@ Any details for the files in here can be found below.
 Installs dependencies and compiles JohnTheRipper on a fresh ubuntu instance in case any saved images go missing.  
 Run this first:  
 ```
-wget https://raw.githubusercontent.com/guineec/college-tools/master/scalable/setup.sh && chmod +x setup.sh
+wget https://raw.githubusercontent.com/guineec/college-tools/master/scalable/john-setup.sh && chmod +x john-setup.sh
 ```   
 Then run:
 ```
-./setup.sh
+./john-setup.sh
 ```  
 ... and JtR should be cloned into home and compiled, ready to go.  
   
