@@ -55,7 +55,7 @@ printf "DONE\n"
 
 # ...and move them to the correct location
 printf "Moving files to apache root...\n"
-sudo mv college-tools/centralize-potfile /var/www/html/
+sudo mv college-tools/scalable/centralize-potfile /var/www/html/
 code=$?
 if [ "$code" != "0" ]; then
 	printf "Couldn't move files to /var/www/html. Check apache2 correctly installed and that this dir exists.\n"
