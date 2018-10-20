@@ -74,7 +74,9 @@ fi
 printf "DONE\n"
 
 # Allow apache through the firewall
+printf "Writing new firewall rules...\n"
 sudo ufw allow 'Apache Full'
+printf "DONE\n"
 
 # Reset apache just in case...
 printf "Stop/restarting apache server...\n"

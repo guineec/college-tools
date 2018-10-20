@@ -93,9 +93,9 @@ if [ -d "./college-tools" ]; then
 fi
 printf "DONE\n"
 
-printf "Watcher setup complete\n"
+printf "\nWatcher setup complete\n"
 printf "Usage - python3 watcher/watcher.py <post-url> <potfile-directory> <full-potfile-path>\n"
 printf "Where <post=url> is the url to post new entries to - i.e. http://0.0.0.0/centralized-potfile/combined.php\n"
 printf "      <potfile-directory> is the full path of the directory containing the potfile to watch\n"
 printf "      <full-potfile-path> is the full path to the .pot file to watch\n"
-printf "Run python3 watcher/watcher.py -h for more help\n" 
+printf "\nRun 'python3 watcher/watcher.py -h' for more help\n" 
