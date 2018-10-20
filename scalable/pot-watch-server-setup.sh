@@ -20,8 +20,8 @@ do
 	code=$?
 	if [ $code -ne 0 ]; then
 		printf "$dep not installed. Installing...\n"
-		if [ "$dep" == $"php" ]; then
-			sudo apt-get install php7.2
+		if [ "$dep" == "php" ]; then
+			sudo apt-get install php7
 			code=$?
 			if [ $code -ne 0 ]; then
 				printf "$dep could not be installed. Try installing manually.\n"
