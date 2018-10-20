@@ -5,14 +5,14 @@
 # Perform update/upgrade cycle
 printf "Performing upgrade/update cycle...\n"
 sudo apt-get update && sudo apt-get upgrade
-$code=$?
+code=$?
 if [ $code -ne 0 ]; then
   printf "UPGRADE CYCLE EXITED WITH CODE $code\n"
   printf "This is an error, try running manually.\n"
   printf "Aborting...\n"
   exit 10
 fi
-prinf "DONE\n"
+printf "DONE\n"
 
 # Check for/install required deps
 printf "Installing required dependencies...\n"
