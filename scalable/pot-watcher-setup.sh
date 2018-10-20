@@ -19,7 +19,7 @@ printf "Installing required dependencies...\n"
 deps=("git", "python3.6")
 for dep in ${deps[@]}
 do
-  command -v $dep
+  command -v "$dep"
   code=$?
   if [ $code -ne 0 ]; then
     sudo apt-get install "$dep"
