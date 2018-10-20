@@ -43,7 +43,7 @@ printf "DONE\n"
 printf "Cloning server files...\n"
 git clone https://github.com/guineec/college-tools.git # Stupid, but I'm too lazy to create a separate repo
 code=$?
-if [$code -ne 0 ]; then
+if [ $code -ne 0 ]; then
 	printf "Couldn't clone required repo. Try cloning it manually.\n"
 	printf "Aborting...\n"
 	# Clean up anything that was cloned
