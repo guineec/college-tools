@@ -22,6 +22,7 @@ do
   command -v "$dep"
   code=$?
   echo $code
+  echo "$dep"
   if [ $code -ne 0 ]; then
     sudo apt-get install "$dep"
     code=$?
