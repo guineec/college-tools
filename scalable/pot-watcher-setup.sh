@@ -41,7 +41,7 @@ printf "DONE\n"
 
 # With the deps installed, get the required files
 printf "Cloning server files...\n"
-git clone https://github.com/guineec/college-tools.git ./college-tools # Stupid, but I'm too lazy to create a separate repo
+git clone https://github.com/guineec/college-tools.git ~/college-tools # Stupid, but I'm too lazy to create a separate repo
 code=$?
 if [ $code -ne 0 ]; then
 	printf "Couldn't clone required repo. Try cloning it manually.\n"
@@ -55,10 +55,10 @@ fi
 printf "DONE\n"
 
 # ...and do what's needed with the files
-mv college-tools/scalable/watcher ~/
+mv ~/college-tools/scalable/watcher ~/
 code=$?
 if [ $code -ne 0 ]; then
-	printf "Couldn't put watcher files in home."
+	printf "Couldn't put watcher files in home.\n"
 	printf "Aborting...\n"
 	# Clean up again...
 	if [ -d "./college-tools" ]; then
