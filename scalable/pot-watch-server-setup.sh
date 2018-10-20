@@ -37,6 +37,7 @@ do
 				exit 11
 		fi
 	fi
+done
 printf "DONE\n"
 
 # With the deps installed, get the required files
