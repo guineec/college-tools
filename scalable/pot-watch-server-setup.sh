@@ -35,6 +35,7 @@ do
 				printf "$dep could not be installed. Try installing manually.\n"
 				printf "Aborting...\n"
 				exit 11
+			fi
 		fi
 	fi
 done
