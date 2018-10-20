@@ -72,7 +72,7 @@ fi
 
 # Now do the pip install
 printf "Inatalling pip dependencies...\n"
-sudo python3 -m pip -r ~/watcher/requirements.txt 
+sudo pip3 -r ~/watcher/requirements.txt 
 code=$?
 if [ $code -ne 0 ]; then
   printf "pip dependencies could not be installed.\n"
