@@ -77,8 +77,9 @@ chmod +x pot-watch-server-setup.sh
 This will attempt to install dependencies and start the ubuntu apache server.  
 Alternatively, grab the source from the centralized-potfile directory and modify/serve however you see fit.  
   
-If setup using the script, the combined potfiles will be located in /var/www/html/centralized-potfile/ directory.  
-To add a new potfile, copy & rename the combined.php script and modify the POTFILE_NAME constant inside the script to a new value, and POST to /your-new-name.php instead of /combined.php from the watcher. 
+If setup using the script, the combined potfiles will be located in /var/www/html/centralized-potfile/ directory. Alternatively, they can be accessed at http://your-instance-IP/centralized-potfile/index.php where a list of all available files is made for download.      
+  
+To add a custom potfile, copy & rename the combined.php script and modify the POTFILE_NAME constant inside the script to a the desired new potfile's name, and POST to /your-new-name.php instead of /combined.php from the watcher. 
   
 **NOTE** This isn't 100% guaranteed to work, so don't use its potfile as a source for john/hashcat. Inspect it, make sure it's ok, make a copy and use that!  
   
