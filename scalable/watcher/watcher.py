@@ -14,6 +14,9 @@ post_url = args.post_url
 potfile = args.potfile_directory
 pf_name = args.potfile_name
 
+if not post_url.startswith("http://"):
+    post_url = "http://" + post_url
+
 handler = ChangeHandler(pf_name, post_url)
 observer = Observer()
 observer.schedule(handler, path=potfile, recursive=False)

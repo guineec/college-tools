@@ -63,3 +63,41 @@ USAGE:
 python3 compound_words.py [options] <path-to-wordlist.txt>  
 ```  
 ***NOTE:*** Again, this will take some time to run on larger lists.  
+  
+## Potfile Watcher Server  
+Sets up a server for use with the pot file watcher service. Allows multiple instances to run john/hashcat and write to the same potfile by posting
+changes to this server.  
+Source for this can be found in the centralized-potfile directory. It's a simple, not very secure php scipt but it gets the job done.  
+To run the one step setup do the following:
+```  
+wget https://raw.githubusercontent.com/guineec/college-tools/master/scalable/pot-watch-server-setup.sh  
+chmod +x pot-watch-server-setup.sh  
+./pot-watch-server-setup.sh
+```  
+This will attempt to install dependencies and start the ubuntu apache server.  
+Alternatively, grab the source from the centralized-potfile directory and modify/serve however you see fit.  
+  
+If setup using the script, the combined potfiles will be located in /var/www/html/centralized-potfile/ directory.  
+To add a new potfile, copy & rename the combined.php script and modify the POTFILE_NAME constant inside the script to a new value, and POST to /<new-name>.php instead of /combined.php from the watcher. 
+  
+**NOTE** This isn't 100% guaranteed to work, so don't use its potfile as a source for john/hashcat. Inspect it, make sure it's ok, make a copy and use that!  
+  
+## Potfile watcher  
+The client service for the potfile watcher. Watches the provided potfile for changes, and posts new entries to the server (which is setup by following the instructions above).  
+  
+To setup the watcher environment, run the following commands:  
+```  
+wget https://raw.githubusercontent.com/guineec/college-tools/master/scalable/pot-watcher-setup.sh
+chmod +x pot-watcher-setup.sh
+./pot-watcher-setup.sh
+```  
+This will copy the script files to the ~/watcher directory and install the pip dependencies required to run the watcher.  
+  
+The watcher script can then be run as follows:  
+```  
+python3 ~/watcher/watcher.py <POST_URL> <potfile_dir> <potfile_path>
+```    
+Where:  
+ - POST_URL is the url to post changes to - i.e. http://1.1.1.1/centralized-potfile/combined.php  
+ - potfile-dir is the path to the directory that contains the potfile  
+ - potfile-path is the filepath of the potfile to watch.  
