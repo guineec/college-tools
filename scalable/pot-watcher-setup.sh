@@ -16,7 +16,7 @@ printf "DONE\n"
 
 # Check for/install required deps
 printf "Installing required dependencies...\n"
-deps=("git" "python3")
+deps=("git" "python3" "pip3")
 for dep in ${deps[@]}
 do
   command -v "$dep"
@@ -24,6 +24,9 @@ do
   if [ $code -ne 0 ]; then
     if [ "$dep" == "git" ]; then
       dep="git-all"
+    fi
+    if [ "$dep" == "pip3" ]; then
+      dep="python3-pip"
     fi
     sudo apt-get install "$dep"
     code=$?
