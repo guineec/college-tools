@@ -6,7 +6,7 @@
 printf "Performing upgrade/update cycle...\n"
 sudo apt-get update && sudo apt-get upgrade
 $code=$?
-if [ "$code" != 0 ]; then
+if [ "$code" != "0" ]; then
   printf "UPGRADE CYCLE EXITED WITH CODE $code\n"
   printf "This is an error, try running manually.\n"
   printf "Aborting...\n"
