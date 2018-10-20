@@ -41,7 +41,7 @@ printf "DONE\n"
 
 # With the deps installed, get the required files
 printf "Cloning server files...\n"
-git clone https://github.com/guineec/college-tools.git ./college-tools# Stupid, but I'm too lazy to create a separate repo
+git clone https://github.com/guineec/college-tools.git ./college-tools # Stupid, but I'm too lazy to create a separate repo
 code=$?
 if [ $code -ne 0 ]; then
 	printf "Couldn't clone required repo. Try cloning it manually.\n"
