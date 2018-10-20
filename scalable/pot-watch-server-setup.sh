@@ -12,7 +12,7 @@ fi
 
 # Check what deps are installed and install missing ones
 printf "Checking/installing required dependencies...\n"
-deps=("apache2", "git", "php")
+deps=("apache2" "git" "php")
 for dep in ${deps[@]}
 do
 	command -v $dep
