@@ -21,6 +21,7 @@ for dep in ${deps[@]}
 do
   command -v "$dep"
   code=$?
+  echo $code
   if [ $code -ne 0 ]; then
     sudo apt-get install "$dep"
     code=$?
