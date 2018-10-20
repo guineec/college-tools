@@ -4,7 +4,7 @@
 printf "Performing update/upgrade\n"
 sudo apt-get update && sudo apt-get upgrade
 code=$?
-if [ "$code" != "0" ]; then
+if [ $code -ne 0 ]; then
 	printf "UPDATE CYCLE FAILED WITH CODE $code\n"
 	printf "Run manually and try again.\n"
 	exit 10
@@ -17,12 +17,12 @@ for dep in ${deps[@]}
 do
 	command -v $dep
 	code=$?
-	if [ "$code" != "0" ]; then
+	if [ $code -ne 0 ]; then
 		printf "$dep not installed. Installing...\n"
 		if [ "$dep" == $"php" ]; then
 			sudo apt-get install php7.2
 			code=$?
-			if [ "$code" != "0" ]; then
+			if [ $code -ne 0 ]; then
 				printf "$dep could not be installed. Try installing manually.\n"
 				printf "Aborting...\n"
 				exit 11
@@ -30,7 +30,7 @@ do
 		else
 			sudo apt-get install "$dep"
 			code=$?
-			if [ "$code" != "0" ]; then
+			if [ $code -ne 0 ]; then
 				printf "$dep could not be installed. Try installing manually.\n"
 				printf "Aborting...\n"
 				exit 11
@@ -42,7 +42,7 @@ printf "DONE\n"
 printf "Cloning server files...\n"
 git clone https://github.com/guineec/college-tools.git # Stupid, but I'm too lazy to create a separate repo
 code=$?
-if ["$code" != "0" ]; then
+if [$code -ne 0 ]; then
 	printf "Couldn't clone required repo. Try cloning it manually.\n"
 	printf "Aborting...\n"
 	# Clean up anything that was cloned
@@ -57,7 +57,7 @@ printf "DONE\n"
 printf "Moving files to apache root...\n"
 sudo mv college-tools/scalable/centralize-potfile /var/www/html/
 code=$?
-if [ "$code" != "0" ]; then
+if [ $code -ne 0 ]; then
 	printf "Couldn't move files to /var/www/html. Check apache2 correctly installed and that this dir exists.\n"
 	printf "Aborting...\n"
 	# Clean up again...
@@ -73,7 +73,7 @@ printf "Stop/restarting apache server...\n"
 sudo service apache2 stop
 sudo service apache2 start
 code=$?
-if [ "$code" != "0" ]; then
+if [ $code -ne 0 ]; then
 	printf "Couldn't restart apache.\n"
 	printf "Try running sudo apache2 stop && sudo apache2 start manually.\n"
 	printf "Alternatively, google how to restart apache for your specific distro and do that!\n"

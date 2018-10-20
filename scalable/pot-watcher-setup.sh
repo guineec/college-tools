@@ -6,7 +6,7 @@
 printf "Performing upgrade/update cycle...\n"
 sudo apt-get update && sudo apt-get upgrade
 $code=$?
-if [ "$code" != "0" ]; then
+if [ $code -ne 0 ]; then
   printf "UPGRADE CYCLE EXITED WITH CODE $code\n"
   printf "This is an error, try running manually.\n"
   printf "Aborting...\n"
@@ -21,10 +21,10 @@ for dep in ${deps[@]}
 do
   command -v $dep
   code=$?
-  if [ "$code" != "0" ]; then
+  if [ $code -ne 0 ]; then
     sudo apt-get install "$dep"
     code=$?
-    if [ "$code" != "0" ]; then
+    if [ $code -ne 0 ]; then
       printf "Error installing dependency $dep\n"
       printf "Try installing manually.\n"
       printf "Aborting...\n"
@@ -40,7 +40,7 @@ printf "DONE\n"
 printf "Cloning server files...\n"
 git clone https://github.com/guineec/college-tools.git # Stupid, but I'm too lazy to create a separate repo
 code=$?
-if ["$code" != "0" ]; then
+if [$code -ne 0 ]; then
 	printf "Couldn't clone required repo. Try cloning it manually.\n"
 	printf "Aborting...\n"
 	# Clean up anything that was cloned
@@ -54,7 +54,7 @@ printf "DONE\n"
 # ...and do what's needed with the files
 mv college-tools/scalable/watcher ~/
 code=$?
-if [ "$code" != "0" ]; then
+if [ $code -ne 0 ]; then
 	printf "Couldn't put watcher files in home."
 	printf "Aborting...\n"
 	# Clean up again...
@@ -68,7 +68,7 @@ fi
 printf "Inatalling pip dependencies...\n"
 sudo python3 -m pip -r ~/watcher/requirements.txt 
 code=$?
-if [ "$code" != "0" ]; then
+if [ $code -ne 0 ]; then
   printf "pip dependencies could not be installed.\n"
   printf "Try manually running 'sudo python3 -m pip install ~/watcher/requirements.txt'\n"
   printf "Install finished with errors.\n"
