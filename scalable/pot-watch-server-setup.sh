@@ -15,6 +15,7 @@ printf "Checking/installing required dependencies...\n"
 deps=("apache2" "git" "php")
 for dep in ${deps[@]}
 do
+	printf "Checking dependency $dep"
 	command -v $dep
 	code=$?
 	if [ $code -ne 0 ]; then
