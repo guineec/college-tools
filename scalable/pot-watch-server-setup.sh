@@ -73,6 +73,9 @@ if [ $code -ne 0 ]; then
 fi
 printf "DONE\n"
 
+# Allow apache through the firewall
+sudo ufw allow 'Apache Full'
+
 # Reset apache just in case...
 printf "Stop/restarting apache server...\n"
 sudo service apache2 stop
