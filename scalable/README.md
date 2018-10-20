@@ -67,7 +67,7 @@ python3 compound_words.py [options] <path-to-wordlist.txt>
 ## Potfile Watcher Server  
 Sets up a server for use with the pot file watcher service. Allows multiple instances to run john/hashcat and write to the same potfile by posting
 changes to this server which will run on one of your instances.  
-Source for this can be found in the centralized-potfile directory. It's a simple, not very secure php scipt but it gets the job done.  
+Source for this can be found in the centralize-potfile directory. It's a simple, not very secure php scipt but it gets the job done.  
 To run the one step setup do the following:
 ```  
 wget https://raw.githubusercontent.com/guineec/college-tools/master/scalable/pot-watch-server-setup.sh  
@@ -75,9 +75,9 @@ chmod +x pot-watch-server-setup.sh
 ./pot-watch-server-setup.sh
 ```  
 This will attempt to install dependencies and start the ubuntu apache server.  
-Alternatively, grab the source from the centralized-potfile directory and modify/serve however you see fit.  
+Alternatively, grab the source from the centralize-potfile directory and modify/serve however you see fit.  
   
-If setup using the script, the combined potfiles will be located in /var/www/html/centralized-potfile/ directory. Alternatively, they can be accessed at http://your-instance-IP/centralized-potfile/index.php where a list of all available files is made for download.      
+If setup using the script, the combined potfiles will be located in /var/www/html/centralize-potfile/ directory. Alternatively, they can be accessed at http://your-instance-IP/centralize-potfile/index.php where a list of all available files is made for download.      
   
 To add a custom potfile, copy & rename the combined.php script and modify the POTFILE_NAME constant inside the script to a the desired new potfile's name, and POST to /your-new-name.php instead of /combined.php from the watcher. 
   
@@ -99,6 +99,6 @@ The watcher script can then be run as follows:
 python3 ~/watcher/watcher.py <POST_URL> <potfile_dir> <potfile_path>
 ```    
 Where:  
- - POST_URL is the url to post changes to - i.e. http://your-instance-IP/centralized-potfile/combined.php  
+ - POST_URL is the url to post changes to - i.e. http://your-instance-IP/centralize-potfile/combined.php  
  - potfile-dir is the path to the directory that contains the potfile  
  - potfile-path is the filepath of the potfile to watch.  
