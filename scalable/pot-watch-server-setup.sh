@@ -92,4 +92,3 @@ printf "To write entries to a different potfile, copy the combined.php file and 
 printf "After doing this, POSTing to <your-instance-ip>/centralized-potfile/<renamed-copy-name>.php?entry=<hash>:<password> will write to your custom potfile.\n"
 
 printf "This has no guarantee of working properly so don't rely on it for saving your potfiles to be submitted.\n"
-
